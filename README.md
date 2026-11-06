@@ -2,7 +2,7 @@
 
 An agent skill for creating, inspecting, editing and validating FreeCAD models through an available FreeCAD integration.
 
-The skill focuses on preserving design intent, maintainable parametric models, efficient handling of complex geometry, and checks proportionate to the change. Specialized references cover sketches and assemblies, Lattice2, scripted features, technical drawings, imported profiles and images, manufacturing and print preparation.
+The skill focuses on preserving design intent, maintainable parametric models, efficient handling of complex geometry, and checks proportionate to the change. Specialized references cover sketches and assemblies, Lattice2, scripted features, technical drawings, imported profiles and images, manufacturing and print preparation, and execution limits for long-running work.
 
 ## Requirements
 

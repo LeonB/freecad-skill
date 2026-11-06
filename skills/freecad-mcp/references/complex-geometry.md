@@ -22,6 +22,18 @@ If the installed runtime provides PythonOCC and FreeCAD's conversion bridges, `S
 
 Verify geometry again after healing. Compare shape, bounds, solids and critical interfaces with the approved source. Large volume differences can reflect either actual geometry changes or numerical integration sensitivity; investigate rather than assuming either explanation. Sampled surface distances are not guaranteed global maximum deviations.
 
+## Tolerance and contact in Booleans
+
+Read the maximum stored tolerance before and after each Boolean and compare it with the inputs rather than with an absolute number. A jump of an order of magnitude marks a damaged result even when validity checks still pass; reject it instead of saving it. Inputs that already carry a large tolerance, for example from earlier cuts or lofts, make later Booleans fragile.
+
+Avoid coincident or nearly coincident contact: a feature starting exactly on a cut face, a cutter built from the same sphere or surface that made an existing face, or a feature placed within the stored tolerance of an existing face or edge. Overlap a new feature into the material by a margin and let it end clear of shared surfaces. Test one feature at several positions before committing all of them; a tolerance jump that depends on position points at local face quality, not at the feature. Then add the small features in one combined operation per heavy shape.
+
+Operations between shapes that only touch along a face, such as two halves of a split part, can be extremely slow. Check clearance on isolated features or on snapshots instead.
+
+For results built from spline lofts, B-rep volume can be unreliable and may disagree with the expected material by a large factor. Cross-check with the volume of a closed tessellated mesh, and treat valid single-solid topology together with a closed mesh as the minimum before accepting a result.
+
+If offsetting a composite spline outline returns a null result, approximate the outline as a dense polygon and use rounded joins; rebuild smooth curves through the offset points when a low-face-count result is needed.
+
 ## Execution and validation
 
 Run risky operations on independent snapshots outside the live GUI where possible. Check the operation result before applying it to the document. For long BOP checks, retain compact progress and explicit error summaries; exceptions are failures, not empty diagnostic results.

@@ -29,6 +29,7 @@ Read only the reference relevant to the task:
 - [Scripted parametric features](references/scripted-features.md): FeaturePython, expensive rebuilds, persistence, and delivery dependencies.
 - [Print preparation](references/print-preparation.md): CAD exports, print orientation, supports, and slice validation; includes a link to optional Bambu-specific details.
 - [Manufacturing design](references/manufacturing-design.md): compliant structures, flush closures, or casting-mold geometry.
+- [Execution limits](references/execution-limits.md): blocking calls, large documents, background and isolated workers, and tool availability.
 
 ## Execute safely in the live session
 

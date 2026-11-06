@@ -14,6 +14,12 @@ Identify which features locate each degree of freedom and which provide retentio
 
 Check seating engagement, lateral clearance, insertion/removal, and interference with enclosed components. Include functional gaps such as magnet-to-target separation in the dimensional requirements. Nominal CAD contact does not prove printed flatness, sealing or retention.
 
+## Printed snap hooks
+
+For a first estimate of a cantilever hook, relate the outer-fibre strain to thickness t, free length L and deflection d by strain = 1.5 t d / L^2, and compare it with a conservative limit for the actual material and orientation. This guides geometry only. Layered prints are weaker across layers, so a hook that stands upright in the print bends against its weakest direction and can fail well below the estimate. Prefer geometry whose bending stress runs along the layers, add a fillet at the root, and lengthen or thicken the beam when the margin is thin.
+
+Allow clearance for printing error on every sliding or catching surface, and measure it on the actual sloped contact rather than along one axis. Check that the catch can be printed: a catch hanging from a wall prints as an overhang. Provide insertion and release slopes when repeated opening is required, and expect some vertical play before the hook engages. Keep new features clear of existing face tolerance (see [complex geometry](complex-geometry.md)). Print a coupon in the real orientation and material before applying hooks to the whole part, and label the design as calculated, not tested, until then.
+
 ## Casting-mold geometry
 
 Evaluate filling, air escape and demolding separately. Channel width alone does not establish fillability: inspect constrictions, branching paths, last-fill regions and high points in the intended mold orientation. Degassing mixed material does not replace cavity venting.
